@@ -16,3 +16,10 @@ spec:
       containers:
       - name: dice-app
         image: nginx:1.25
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html
+        configMap:
+          name: dice-html
