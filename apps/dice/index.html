@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dobbelstenen</title></head>
+<body>
+  <h1>Dobbelstenen Gooier</h1>
+  <p>Klik op de knop om een dobbelsteen te gooien.</p>
+
+  <button onclick="gooi()">Gooi!</button>
+
+  <p id="resultaat"></p>
+  <p id="totaal"></p>
+
+  <h2>Geschiedenis</h2>
+  <ul id="lijst"></ul>
+
+  <script>
+    let pogingen = 0;
+    let som = 0;
+
+    function gooi() {
+      const getal = Math.floor(Math.random() * 6) + 1;
+      pogingen++;
+      som += getal;
+
+      document.getElementById('resultaat').textContent = 'Je gooide: ' + getal;
+      document.getElementById('totaal').textContent = 'Totaal na ' + pogingen + ' beurten: ' + som;
+
+      const li = document.createElement('li');
+      li.textContent = 'Beurt ' + pogingen + ': ' + getal;
+      document.getElementById('lijst').appendChild(li);
+    }
+  </script>
+</body>
+</html>
