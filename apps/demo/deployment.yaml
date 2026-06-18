@@ -1,20 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app
-  namespace: default
+  name: dice-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-app
+      app: dice-app
   template:
     metadata:
       labels:
-        app: demo-app
+        app: dice-app
     spec:
       containers:
-      - name: demo-app
+      - name: dice-app
         image: nginx:1.25
-        ports:
-        - containerPort: 80
